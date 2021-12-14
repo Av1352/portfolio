@@ -1,3 +1,0 @@
-matcher = window.matchMedia('(prefers-color-scheme: dark'));
-mather.addListener(onUpdate);
-onUpdate();

@@ -32,9 +32,44 @@ body {
     color: #dab49d;
 }
 
+.hero-subtitle {
+    font-family: 'Raleway', sans-serif; 
+    font-size: 24px;
+}
+
 .hero-location {
     margin-top: 12px;
     font-size: 16px;
 }
 
+.about-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    height: 100%;
+}
 
+.about-card .icon {
+    background: #f1f1f1;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    font-size: 18px;
+    color: #333;
+}
+
+.about-card h6 {
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.about-card p {
+    font-size: 14px;
+    margin-bottom: 0;
+    color: #555;
+}

@@ -1,0 +1,40 @@
+body {
+    background: #FAFAFA;
+    color: #212529;
+}
+
+.navbar, .bg-dark {
+    background: #212529 !important;
+    color: #fff !important;
+}
+
+.section-heading, h2 {
+    color: #212529; 
+}
+
+.bg-success, .bg-primary, .bg-green {
+    background: none !important;
+    color: inherit !important;
+} 
+
+.hero-section {
+    background-color: #212529;
+    color: #dab49d;
+    text-align: center;
+    padding: 8rem 0;
+}
+
+.hero-title {
+    font-size: 54px;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 16px;
+    letter-spacing: 1px;
+    color: #dab49d;
+}
+
+.hero-location {
+    margin-top: 12px;
+    font-size: 16px;
+}
+
+

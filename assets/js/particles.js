@@ -51,3 +51,24 @@ if (canvas) {
     }
     draw();
 }
+
+document.querySelectorAll('.nav-link[href^="#"]').forEach(anchor => {
+  anchor.addEventListener("click", function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute("href"));
+    const offset = document.querySelector(".custom-navbar").offsetHeight;
+    const top = target.getBoundingClientRect().top + window.pageYOffset - offset + 10;
+    window.scrollTo({ top, behavior: "smooth" });
+  });
+});
+
+
+document.querySelectorAll('.nav-link[href^="#"], .navbar-brand[href^="#"]').forEach(anchor => {
+  anchor.addEventListener("click", function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute("href"));
+    const offset = document.querySelector(".custom-navbar").offsetHeight;
+    const top = target.getBoundingClientRect().top + window.pageYOffset - offset + 10;
+    window.scrollTo({ top, behavior: "smooth" });
+  });
+});

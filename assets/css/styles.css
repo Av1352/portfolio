@@ -7,8 +7,19 @@
 html, body {
     line-height: 1.6;
     scroll-behavior: smooth;
-    background: #FAFAFA;
+    /* background: #FAFAFA; */
     color: #212529;
+}
+
+#globalParticles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.8;
 }
 
 .container {
@@ -162,7 +173,6 @@ a:hover {
 .hero-modern {
     position: relative;
     background: linear-gradient(120deg, #212529, #181a1b, #0f0f0f);
-    background-size: 200% 200%;
     animation: gradientShift 14s ease-in-out infinite;
     color: #DAB49D;
     min-height: 100vh;
@@ -175,20 +185,9 @@ a:hover {
 }
 
 @keyframes gradientShift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-#particleCanvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    opacity: 0.25;
-    z-index: 0;
+    0% { background-position: 0% 2%; }
+    50% { background-position: 2% 2%; }
+    100% { background-position: 0% 2%; }
 }
 
 .hero-modern::before {
@@ -388,52 +387,114 @@ a:hover {
 
 
 /* ========== ABOUT SECTION ========== */
-#about {
-    background: #f8f9fa;
-    padding: 5rem 0;
+.about-modern {
+    position: relative;
+    background: linear-gradient(180deg, #1f2123 0%, #292c2e 100%);
+    color: #DAB49D;
+    padding: 6rem 0;
+    overflow: hidden;
 }
 
-#about h2 {
-    margin-bottom: 1rem;
+.about-modern::before {
+    content: "";
+    position: absolute;
+    top: -200px;
+    left: -150px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle at center, rgba(115, 186, 155, 0.12) 0%, transparent 0%);
+    z-index: 0;
+    filter: blur(100px);
+}
+
+.about-inner {
+    position: relative;
+    z-index: 2;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    gap: 3rem;
+}
+
+.about-text {
+    text-align: left;
+}
+
+.about-text h2 {
+    color: #73BA9B;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.about-text p {
+    font-family: 'Raleway', sans-serif;
+    line-height: 1.8;
+}
+
+.about-intro {
+    font-size: 1.1rem;
+    color: #dab49d;
+    margin-bottom: 1.2rem;
+}
+
+.about-body {
+    font-size: 1rem;
+    color: #c9c9c9;
+}
+
+.about-highlights {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
 }
 
 .about-card {
-    background: #fff;
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    height: 100%;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(115, 186, 155, 0.2);
+    border-radius: 16px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .about-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 14px rgba(115, 186, 155, 0.1);
 }
 
 .about-card .icon {
-    background: #73BA9B1A;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 8px;
-    margin-bottom: 12px;
-    font-size: 18px;
-    color: #895737;
+    font-size: 1.8rem;
+    margin-bottom: 0.75rem;
+    color: #73BA9B;
 }
 
 .about-card h6 {
+    font-size: 1.1rem;
     font-weight: 600;
-    margin-bottom: 8px;
-    color: #212529;
+    margin-bottom: 0.5rem;
+    color: #DAB49D;
 }
 
 .about-card p {
-    font-size: 14px;
-    margin-bottom: 0;
-    color: #555;
+    font-size: 0.95rem;
+    color: #c1c1c1;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-highlights {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    .about-text {
+        text-align: center;
+    }
 }
 
 /* ========== PORTFOLIO SECTION ========== */

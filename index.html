@@ -52,45 +52,8 @@
     data-bs-target="#mainNav"
     data-bs-offset="54"
   >
-  <!-- <nav
-      class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark"
-      id="mainNav"
-    >
-      <div class="container">
-        <button="collapse"
-          data-bs-target="#navbarResponsive"
-          class="navbar-toggler navbar-toggler-right"
-          type="button"
-          aria-controls="navbarResponsive"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <i class="fa fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <a href="#page-top">
-            <img src="assets/img/fav-white.png" width="52" height="52"
-          /></a>
-          <ul class="navbar-nav ms-auto text-uppercase">
-            <li class="nav-item">
-              <a class="nav-link" href="#about">about</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#portfolio">portfolio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#expertise">expertise</a>
-            </li>
-            <li class="nav-item"></li>
-            <li class="nav-item">
-              <a class="nav-link" href="#contact">Contact</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav> -->
-
-    <nav class="navbar navbar-expand-lg fixed-top custom-navbar">
+  <canvas id="globalParticles"></canvas>
+  <nav class="navbar navbar-expand-lg fixed-top custom-navbar">
   <div class="container">
     <a class="navbar-brand" href="#home">
       <img src="assets/img/fav-white.png" width="42" height="42" alt="logo" class="brand-logo" />
@@ -111,9 +74,7 @@
     </div>
   </div>
 </nav>
-
     <header class="hero-modern" id="home">
-      <canvas id="particleCanvas"></canvas>
       <div class="hero-inner">
         <h1 class="hero-name">Anju Vilashni Nandhakumar</h1>
           <h2 class="hero-typewriter">
@@ -147,76 +108,54 @@
   </div>
 </header>
 
-    <section id="about" class="py-5 bg-light">
-  <div class="container">
-    <!-- Heading -->
-    <div class="row mb-5">
-      <div class="col-lg-12 text-center">
-        <h2 class="mb-3">About Me</h2>
-        <p class="lead" style="max-width: 720px; margin: 0 auto;">
-          I'm a passionate AI/ML engineer with a Master's in Artificial Intelligence from Northeastern University, 
-          with a strong background in developing intelligent systems for healthcare and accessibility.
+<section class="about-modern" id="about" >
+  <div class="about-inner container">
+    <div class="about-grid">
+      <div class="about-text">
+        <h2 class="section-heading">About Me</h2>
+        <p class="about-intro">
+          I’m an <strong>AI Engineer</strong> with a Master’s in Artificial Intelligence from
+          <strong>Northeastern University</strong>, passionate about building intelligent systems
+          that bridge <strong>human intuition</strong> and <strong>machine reasoning</strong>.
         </p>
-      </div>
-    </div>
-
-    <div class="row">
-      <!-- Left Column -->
-      <div class="col-lg-6 mb-4">
-        <h3 class="mb-3">My Journey</h3>
-        <p>
-          I recently graduated with an MS in Artificial Intelligence from Northeastern University, Boston, 
-          where I focused on algorithms, machine learning, NLP, computer vision, and explainable AI.
-        </p>
-        <p>
-          Before that, I earned my Bachelor of Technology in Computer Science and Engineering from SRM Institute of Science, 
-          India, with coursework in deep learning, computer vision, and nature-inspired computing.
-        </p>
-        <p>
-          My experience spans from leading innovation initiatives and mentoring students to building NLP platforms 
-          and developing CNN tools for medical diagnosis. I'm passionate about creating AI solutions with real-world impact, 
-          particularly in healthcare accessibility.
+        <p class="about-body">
+          My work explores the intersection of <strong>computer vision</strong>,
+          <strong>reinforcement learning</strong>, and <strong>explainable AI</strong> —
+          designing models that not only perform well but can be trusted and understood.
+          I believe AI should feel less like a black box and more like a dialogue —
+          between logic and empathy, data and design.
         </p>
       </div>
 
-      <!-- Right Column: Cards -->
-      <div class="col-lg-6">
-        <div class="row g-3">
-          <!-- Card -->
-          <div class="col-md-6">
-            <div class="about-card">
-              <div class="icon"><i class="fas fa-brain"></i></div>
-              <h6>AI Research</h6>
-              <p>Developing explainable AI systems for healthcare applications and tumor classification.</p>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="about-card">
-              <div class="icon"><i class="fas fa-graduation-cap"></i></div>
-              <h6>Education</h6>
-              <p>MS in AI at Northeastern University (2025) with focus on ML, NLP, and Computer Vision.</p>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="about-card">
-              <div class="icon"><i class="fas fa-lightbulb"></i></div>
-              <h6>Innovation</h6>
-              <p>Led innovation initiatives at SRM Institute, scaling AI platforms to 1K+ users.</p>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="about-card">
-              <div class="icon"><i class="fas fa-users"></i></div>
-              <h6>Mentoring</h6>
-              <p>Mentored 50+ students in AI concepts and led teams of 20 engineers in ML projects.</p>
-            </div>
-          </div>
+      <!-- RIGHT: HIGHLIGHT CARDS -->
+      <div class="about-highlights">
+        <div class="about-card">
+          <div class="icon">🧠</div>
+          <h6>AI Research</h6>
+          <p>Exploring interpretable systems in vision and healthcare.</p>
+        </div>
+        <div class="about-card">
+          <div class="icon">🎓</div>
+          <h6>Education</h6>
+          <p>M.S. Artificial Intelligence – Northeastern University</p>
+        </div>
+        <div class="about-card">
+          <div class="icon">💡</div>
+          <h6>Innovation</h6>
+          <p>Integrating NLP and CV for accessible, explainable tools.</p>
+        </div>
+        <div class="about-card">
+          <div class="icon">🤝</div>
+          <h6>Mentorship</h6>
+          <p>Guiding learners in ML and AI-driven projects.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
-  <section class="bg-light bg-dark" id="portfolio">
+
+
+  <section class="bg-dark" id="portfolio">
       <div class="container">
         <div class="row">
           <div class="col-lg-12 text-center">
@@ -542,7 +481,7 @@
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
     <script src="assets/js/agency.js"></script>
-    <script src="assets/js/particles.js"></script>
-    <script src="assets/js/typewriter.js"></script>
+    <script src="assets/js/globalParticles.js"></script>
+    <script src="assets/js/typewriter.js"></script>    
   </body>
 </html>

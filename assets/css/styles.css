@@ -11,6 +11,25 @@ html, body {
     color: #212529;
 }
 
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+section {
+    scroll-margin-top: 80px;
+    padding: 6rem 0;
+}
+
+.section-card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(33,37,41,0.07);
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+}
+
 /* ===== LINKS ===== */
 a {
     color: #73BA9B;
@@ -139,10 +158,6 @@ a:hover {
     box-shadow: none;
 }
 
-section {
-    scroll-margin-top: 70px;
-}
-
 /* ========== HERO SECTION ========== */
 .hero-modern {
     position: relative;
@@ -151,11 +166,11 @@ section {
     animation: gradientShift 14s ease-in-out infinite;
     color: #DAB49D;
     min-height: 100vh;
+    padding: 12vh 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 0 1rem;
     overflow: hidden;
 }
 
@@ -204,11 +219,11 @@ section {
 
 .hero-name {
     font-family: 'Montserrat', sans-serif;
-    font-size: 54px;
+    font-size: 64px;
     font-weight: 700;
     color: #DAB49D;
     letter-spacing: 0.5px;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     animation: textFade 1.8s ease forwards;
     opacity: 0;
 }
@@ -218,26 +233,50 @@ section {
     100% { opacity: 1; transform: translateY(0); filter: blur(0); }
 }
 
+.hero-typewriter {
+    font-family: 'Raleway', sans-serif;
+    font-size: 28px;
+    color: #73BA9B;
+    letter-spacing: 0.4px;
+    margin-bottom: 2rem;
+}
+
+.cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1em;
+    background-color: #73BA9B;
+    margin-left: 2px;
+    animation: blink 1s infinite;
+    vertical-align: text-top;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
 .hero-role {
     font-family: 'Raleway', sans-serif;
     font-size: 24px;
     color: #73BA9B;
-    margin-bottom: 0.4rem;
-    letter-spacing: 0.3px;
+    margin-bottom: 2rem;
+    letter-spacing: 0.4px;
 }
 
 .hero-tagline {
-    font-size: 16px;
+    font-size: 20px;
     color: #C08552;
     margin-bottom: 2rem;
-    font-weight: 400;
+    letter-spacing: 0.4px;
 }
 
 .hero-location {
-    font-size: 0.95rem;
-    color: #b3b3b3;
+    font-size: 18px;
+    color: #cbded6;
     margin-bottom: 2rem;
     font-family: 'Raleway', sans-serif;
+    margin-bottom: 2rem;
 }
 
 .hero-links {
@@ -245,6 +284,7 @@ section {
     justify-content: center;
     flex-wrap: wrap;
     gap: 1.2rem;
+    margin-bottom: 2rem;
 }
 
 .hero-links a {
@@ -255,7 +295,7 @@ section {
 }
 
 .hero-links a:hover {
-    color: #DAB49D;
+    color: #C08552;
     transform: translateY(-3px);
 }
 
@@ -500,3 +540,258 @@ section {
 /* ========== UTILITIES ========== */
 .text-uppercase { text-transform: uppercase; }
 .text-center { text-align: center; }
+
+
+/* =========================
+   RESPONSIVE DESIGN SYSTEM
+   ========================= */
+
+/* --- Base fluid scaling --- */
+html {
+  font-size: 16px;
+}
+
+@media (max-width: 1400px) {
+  html { font-size: 15px; }
+}
+
+@media (max-width: 1200px) {
+  html { font-size: 14px; }
+}
+
+@media (max-width: 992px) {
+  html { font-size: 13.5px; }
+}
+
+@media (max-width: 768px) {
+  html { font-size: 13px; }
+}
+
+@media (max-width: 480px) {
+  html { font-size: 12px; }
+}
+
+/* --- Global container & section spacing --- */
+section {
+  padding: clamp(3rem, 8vh, 6rem) 0;
+  scroll-margin-top: 80px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* =========================
+   HERO SECTION RESPONSIVENESS
+   ========================= */
+.hero-modern {
+  padding: 12vh 2rem;
+  min-height: 100vh;
+}
+
+.hero-inner {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.hero-name {
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  margin-bottom: 1.5rem;
+}
+
+.hero-typewriter,
+.hero-role {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  line-height: 1.4;
+}
+
+.hero-tagline {
+  font-size: clamp(0.95rem, 1.6vw, 1.25rem);
+}
+
+.hero-location {
+  font-size: clamp(0.9rem, 1.3vw, 1.1rem);
+  margin-bottom: 1.8rem;
+}
+
+/* Buttons & Links */
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.btn-primary, .btn-secondary, .resume-btn {
+  font-size: clamp(0.85rem, 1vw, 1rem);
+  padding: 0.7rem 1.4rem;
+  border-radius: 10px;
+}
+
+/* Social Icons */
+.hero-socials {
+  display: flex;
+  justify-content: center;
+  gap: clamp(1rem, 3vw, 1.5rem);
+  flex-wrap: wrap;
+}
+
+.social-icon {
+  width: clamp(38px, 5vw, 45px);
+  height: clamp(38px, 5vw, 45px);
+  font-size: clamp(1.1rem, 1.8vw, 1.3rem);
+}
+
+/* =========================
+   NAVBAR RESPONSIVENESS
+   ========================= */
+.custom-navbar {
+  padding: 1rem 2rem;
+}
+
+@media (max-width: 992px) {
+  .custom-navbar {
+    padding: 0.75rem 1rem;
+  }
+  .navbar-nav {
+    text-align: center;
+    background: rgba(33,37,41,0.97);
+    border-radius: 10px;
+    margin-top: 1rem;
+  }
+  .navbar-nav .nav-link {
+    padding: 0.75rem 0;
+    display: block;
+  }
+}
+
+.navbar-nav .nav-link {
+  font-size: clamp(0.85rem, 1vw, 1rem);
+  margin: 0 0.8rem;
+}
+
+/* =========================
+   ABOUT SECTION
+   ========================= */
+#about {
+  padding: clamp(3rem, 8vh, 6rem) 0;
+}
+
+.about-card {
+  padding: clamp(1rem, 3vw, 2rem);
+  margin-bottom: 1.5rem;
+}
+
+.about-card p {
+  font-size: clamp(0.85rem, 1vw, 0.95rem);
+  line-height: 1.6;
+}
+
+/* =========================
+   PORTFOLIO SECTION
+   ========================= */
+#portfolio {
+  padding: clamp(3rem, 8vh, 6rem) 0;
+}
+
+.portfolio-caption h4 {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+}
+
+.portfolio-caption p {
+  font-size: clamp(0.85rem, 1.2vw, 0.95rem);
+}
+
+/* =========================
+   EXPERTISE SECTION
+   ========================= */
+#expertise {
+  padding: clamp(3rem, 8vh, 6rem) 0;
+}
+
+#expertise h2 {
+  font-size: clamp(1.4rem, 3vw, 2rem);
+}
+
+#expertise img {
+  max-width: 80px;
+}
+
+@media (max-width: 576px) {
+  #expertise img {
+    max-width: 60px;
+  }
+}
+
+/* =========================
+   CONTACT SECTION
+   ========================= */
+#contact {
+  padding: clamp(3rem, 8vh, 6rem) 0;
+  text-align: center;
+}
+
+#contact h2 {
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
+}
+
+#contact h3 {
+  font-size: clamp(0.9rem, 1.8vw, 1rem);
+  line-height: 1.6;
+}
+
+#contact .socials a {
+  font-size: clamp(1.5rem, 3vw, 1.75rem);
+  margin: 0 0.5rem;
+}
+
+#contact p {
+  font-size: clamp(0.8rem, 1.2vw, 0.9rem);
+}
+
+/* =========================
+    RESPONSIVE FIXES
+   ========================= */
+
+@media (max-width: 768px) {
+
+.hero-modern {
+    padding: 8vh 1.5rem;
+}
+
+.hero-name {
+    font-size: 2.2rem;
+}
+
+.hero-tagline {
+    font-size: 1rem;
+}
+
+.hero-buttons {
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-links {
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+}
+
+@media (max-width: 480px) {
+
+.hero-name {
+    font-size: 1.9rem;
+}
+
+.hero-typewriter {
+    font-size: 1rem;
+}
+
+.hero-tagline {
+    font-size: 0.9rem;
+}
+}

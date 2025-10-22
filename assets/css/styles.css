@@ -498,7 +498,7 @@ a:hover {
 }
 
 /* ========== PORTFOLIO SECTION ========== */
-#portfolio {
+/* #portfolio {
     background: #212529;
     color: #fff;
     padding: 5rem 0;
@@ -533,6 +533,204 @@ a:hover {
 .portfolio-caption p {
     color: #73BA9B;
     font-size: 0.9rem;
+} */
+
+/* === MY WORK SECTION === */
+.projects-section {
+    background: linear-gradient(120deg, #0f0f0f, #181a1b, #212529);
+    color: #f8f9fa;
+    padding: 6rem 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.section-heading {
+    text-align: center;
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: #73ba9b;
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+    font-family: "Montserrat", sans-serif;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+.section-heading::after {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 3px;
+    background: linear-gradient(90deg, #73ba9b, #dab49d);
+    margin: 0.8rem auto 0;
+    border-radius: 3px;
+}
+
+/* Subsection headings (CV, NLP, RL) */
+.subsection-heading {
+    color: #dab49d;
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin: 3rem 0 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-left: 3px solid #73ba9b;
+    padding-left: 0.8rem;
+}
+
+/* Projects Grid */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+/* Individual Project Card */
+.project-card {
+    background: rgba(25, 25, 25, 0.9);
+    border: 1px solid rgba(115, 186, 155, 0.15);
+    overflow: hidden;
+    transition: all 0.35s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(115, 186, 155, 0.35);
+    box-shadow: 0 0 25px rgba(115, 186, 155, 0.2);
+}
+
+/* Image Section */
+.project-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border: none;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.project-card:hover .project-img {
+    transform: scale(1.05);
+}
+
+/* Project Content */
+.project-content {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.project-content h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #dab49d;
+    margin-bottom: 0.75rem;
+    font-family: "Montserrat", sans-serif;
+}
+
+.project-content p {
+    color: #ccc;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+/* Tags */
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.project-tags span {
+    background: rgba(115, 186, 155, 0.15);
+    color: #73ba9b;
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    letter-spacing: 0.3px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.project-tags span:hover {
+    background: #73ba9b;
+    color: #0f0f0f;
+}
+
+/* Source Code Button */
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    color: #73ba9b;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.project-link i {
+    margin-right: 6px;
+    transition: transform 0.3s ease;
+}
+
+.project-link:hover i {
+    transform: translateX(4px);
+}
+
+.project-link:hover {
+    color: #dab49d;
+}
+
+/* Hover glow effect overlay (subtle particle vibe) */
+.project-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 0%, rgba(115, 186, 155, 0.05), transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.project-card:hover::before {
+    opacity: 1;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 992px) {
+    .section-heading {
+        font-size: 2rem;
+    }
+
+    .subsection-heading {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .projects-section {
+        padding: 4rem 1.5rem;
+    }
+
+    .project-content {
+        padding: 1.2rem;
+    }
+
+    .project-content h3 {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* ========== EXPERTISE SECTION ========== */
